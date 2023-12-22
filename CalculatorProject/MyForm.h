@@ -36,12 +36,14 @@ namespace CalculatorProject {
 		}
 	private: System::Windows::Forms::Button^ btnBackspace;
 	private: System::Windows::Forms::TextBox^ txtDisplay;
+	private: System::Windows::Forms::Button^ btnClear;
+	private: System::Windows::Forms::Button^ btnClearEntry;
 	protected:
 
 
-	private: System::Windows::Forms::Button^ btnC;
 
-	private: System::Windows::Forms::Button^ btnCE;
+
+
 	private: System::Windows::Forms::Button^ btnPlusMinus;
 	private: System::Windows::Forms::Button^ btnDigit7;
 	private: System::Windows::Forms::Button^ btnDigit9;
@@ -95,8 +97,8 @@ namespace CalculatorProject {
 		{
 			this->btnBackspace = (gcnew System::Windows::Forms::Button());
 			this->txtDisplay = (gcnew System::Windows::Forms::TextBox());
-			this->btnC = (gcnew System::Windows::Forms::Button());
-			this->btnCE = (gcnew System::Windows::Forms::Button());
+			this->btnClear = (gcnew System::Windows::Forms::Button());
+			this->btnClearEntry = (gcnew System::Windows::Forms::Button());
 			this->btnPlusMinus = (gcnew System::Windows::Forms::Button());
 			this->btnDigit7 = (gcnew System::Windows::Forms::Button());
 			this->btnDigit9 = (gcnew System::Windows::Forms::Button());
@@ -137,28 +139,29 @@ namespace CalculatorProject {
 			this->txtDisplay->Size = System::Drawing::Size(320, 69);
 			this->txtDisplay->TabIndex = 1;
 			// 
-			// btnC
+			// btnClear
 			// 
-			this->btnC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnClear->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnC->Location = System::Drawing::Point(93, 98);
-			this->btnC->Name = L"btnC";
-			this->btnC->Size = System::Drawing::Size(75, 71);
-			this->btnC->TabIndex = 2;
-			this->btnC->Text = L"C";
-			this->btnC->UseVisualStyleBackColor = true;
-			this->btnC->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			this->btnClear->Location = System::Drawing::Point(93, 98);
+			this->btnClear->Name = L"btnClear";
+			this->btnClear->Size = System::Drawing::Size(75, 71);
+			this->btnClear->TabIndex = 2;
+			this->btnClear->Text = L"C";
+			this->btnClear->UseVisualStyleBackColor = true;
+			this->btnClear->Click += gcnew System::EventHandler(this, &MyForm::btnClear_Click);
 			// 
-			// btnCE
+			// btnClearEntry
 			// 
-			this->btnCE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnClearEntry->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnCE->Location = System::Drawing::Point(174, 98);
-			this->btnCE->Name = L"btnCE";
-			this->btnCE->Size = System::Drawing::Size(75, 71);
-			this->btnCE->TabIndex = 0;
-			this->btnCE->Text = L"CE";
-			this->btnCE->UseVisualStyleBackColor = true;
+			this->btnClearEntry->Location = System::Drawing::Point(174, 98);
+			this->btnClearEntry->Name = L"btnClearEntry";
+			this->btnClearEntry->Size = System::Drawing::Size(75, 71);
+			this->btnClearEntry->TabIndex = 0;
+			this->btnClearEntry->Text = L"CE";
+			this->btnClearEntry->UseVisualStyleBackColor = true;
+			this->btnClearEntry->Click += gcnew System::EventHandler(this, &MyForm::btnClearEntry_Click);
 			// 
 			// btnPlusMinus
 			// 
@@ -372,7 +375,7 @@ namespace CalculatorProject {
 			this->Controls->Add(this->btnDigit2);
 			this->Controls->Add(this->btnDigit5);
 			this->Controls->Add(this->btnDigit8);
-			this->Controls->Add(this->btnC);
+			this->Controls->Add(this->btnClear);
 			this->Controls->Add(this->txtDisplay);
 			this->Controls->Add(this->btnDivision);
 			this->Controls->Add(this->btnEquals);
@@ -387,7 +390,7 @@ namespace CalculatorProject {
 			this->Controls->Add(this->btnDigit4);
 			this->Controls->Add(this->btnPlusMinus);
 			this->Controls->Add(this->btnDigit7);
-			this->Controls->Add(this->btnCE);
+			this->Controls->Add(this->btnClearEntry);
 			this->Controls->Add(this->btnBackspace);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
@@ -400,6 +403,7 @@ namespace CalculatorProject {
 
 		double firstDigit, secondDigit, result;
 		String^ operators;
+		bool afterEquals = false;
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -409,7 +413,8 @@ namespace CalculatorProject {
 private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {  // btnDigits functionality
 	Button^ Numbers = safe_cast<Button^>(sender);
 
-	if(txtDisplay->Text == "0"){
+	if(txtDisplay->Text == "0" || afterEquals){
+		afterEquals = false;
 		txtDisplay->Text = Numbers->Text;
 	}
 	else {
@@ -430,14 +435,38 @@ private: System::Void btnDecimal_Click(System::Object^ sender, System::EventArgs
 		txtDisplay->Text = txtDisplay->Text + ".";
 	}
 }
-private: System::Void btnEquals_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btnEquals_Click(System::Object^ sender, System::EventArgs^ e) { // Equals button functionality
 
 	secondDigit = Double::Parse(txtDisplay->Text);
 
-	if(operators == "+")
-	{
+	if (operators == "+"){
 		result = firstDigit + secondDigit;
 		txtDisplay->Text = System::Convert::ToString(result);
 	}
+	else if (operators == "-") {
+		result = firstDigit - secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
+	}
+	else if (operators == "x") {
+		result = firstDigit * secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
+	}
+	else if (operators == "÷") {
+		result = firstDigit / secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
+	}
+
+	afterEquals = true;
+	}
+
+
+private: System::Void btnClear_Click(System::Object^ sender, System::EventArgs^ e) {  // Clear button functionality
+	txtDisplay->Text = "0";
+}
+
+
+private: System::Void btnClearEntry_Click(System::Object^ sender, System::EventArgs^ e) {  // Clear Entry button functionality
+	txtDisplay->Text = "0";
+}
 };
 }
