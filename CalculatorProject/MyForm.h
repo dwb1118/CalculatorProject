@@ -205,6 +205,7 @@ namespace CalculatorProject {
 			this->btnPlus->TabIndex = 0;
 			this->btnPlus->Text = L"+";
 			this->btnPlus->UseVisualStyleBackColor = true;
+			this->btnPlus->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btnDigit8
 			// 
@@ -252,6 +253,7 @@ namespace CalculatorProject {
 			this->btnMinus->TabIndex = 0;
 			this->btnMinus->Text = L"-";
 			this->btnMinus->UseVisualStyleBackColor = true;
+			this->btnMinus->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btnDigit5
 			// 
@@ -299,6 +301,7 @@ namespace CalculatorProject {
 			this->btnMult->TabIndex = 0;
 			this->btnMult->Text = L"x";
 			this->btnMult->UseVisualStyleBackColor = true;
+			this->btnMult->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btnDigit2
 			// 
@@ -334,6 +337,7 @@ namespace CalculatorProject {
 			this->btnEquals->TabIndex = 0;
 			this->btnEquals->Text = L"=";
 			this->btnEquals->UseVisualStyleBackColor = true;
+			this->btnEquals->Click += gcnew System::EventHandler(this, &MyForm::btnEquals_Click);
 			// 
 			// btnDivision
 			// 
@@ -345,6 +349,7 @@ namespace CalculatorProject {
 			this->btnDivision->TabIndex = 0;
 			this->btnDivision->Text = L"÷";
 			this->btnDivision->UseVisualStyleBackColor = true;
+			this->btnDivision->Click += gcnew System::EventHandler(this, &MyForm::EnterOperator);
 			// 
 			// btnDecimal
 			// 
@@ -356,6 +361,7 @@ namespace CalculatorProject {
 			this->btnDecimal->TabIndex = 2;
 			this->btnDecimal->Text = L".";
 			this->btnDecimal->UseVisualStyleBackColor = true;
+			this->btnDecimal->Click += gcnew System::EventHandler(this, &MyForm::btnDecimal_Click);
 			// 
 			// MyForm
 			// 
@@ -399,7 +405,8 @@ namespace CalculatorProject {
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {  // btnDigits functionality
 	Button^ Numbers = safe_cast<Button^>(sender);
 
 	if(txtDisplay->Text == "0"){
@@ -408,6 +415,29 @@ private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) 
 	else {
 		txtDisplay->Text = txtDisplay->Text + Numbers->Text;
 	}
+	}
+
+private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {  // Operators functionality
+	Button^ NumbersOp = safe_cast<Button^>(sender);
+
+	firstDigit = Double::Parse(txtDisplay->Text);
+	txtDisplay->Text = "";
+	operators = NumbersOp->Text;
+}
+private: System::Void btnDecimal_Click(System::Object^ sender, System::EventArgs^ e) {  // Decimal functionality
+
+	if (!txtDisplay->Text->Contains(".")) {
+		txtDisplay->Text = txtDisplay->Text + ".";
+	}
+}
+private: System::Void btnEquals_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	secondDigit = Double::Parse(txtDisplay->Text);
+
+	if(operators == "+")
+	{
+		result = firstDigit + secondDigit;
+		txtDisplay->Text = System::Convert::ToString(result);
 	}
 };
 }
