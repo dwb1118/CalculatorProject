@@ -128,6 +128,7 @@ namespace CalculatorProject {
 			this->btnBackspace->TabIndex = 0;
 			this->btnBackspace->Text = L"⌫";
 			this->btnBackspace->UseVisualStyleBackColor = true;
+			this->btnBackspace->Click += gcnew System::EventHandler(this, &MyForm::btnBackspace_Click);
 			// 
 			// txtDisplay
 			// 
@@ -138,6 +139,7 @@ namespace CalculatorProject {
 			this->txtDisplay->Name = L"txtDisplay";
 			this->txtDisplay->Size = System::Drawing::Size(320, 69);
 			this->txtDisplay->TabIndex = 1;
+			this->txtDisplay->Text = L"0";
 			// 
 			// btnClear
 			// 
@@ -426,8 +428,13 @@ private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) 
 private: System::Void EnterOperator(System::Object^ sender, System::EventArgs^ e) {  // Operators functionality
 	Button^ NumbersOp = safe_cast<Button^>(sender);
 
+	if (txtDisplay->Text == "+" || txtDisplay->Text == "-" || txtDisplay->Text == "x" || txtDisplay->Text == "÷" || txtDisplay->Text == "") {
+
+		txtDisplay->Text = "0";
+	}
+
 	firstDigit = Double::Parse(txtDisplay->Text);
-	txtDisplay->Text = "";
+	txtDisplay->Text = "0";
 	operators = NumbersOp->Text;
 }
 private: System::Void btnDecimal_Click(System::Object^ sender, System::EventArgs^ e) {  // Decimal functionality
@@ -440,7 +447,8 @@ private: System::Void btnEquals_Click(System::Object^ sender, System::EventArgs^
 
 	secondDigit = Double::Parse(txtDisplay->Text);
 
-	if (operators == "+"){
+	if (afterEquals == true) {}
+	else if (operators == "+"){
 		result = firstDigit + secondDigit;
 		txtDisplay->Text = System::Convert::ToString(result);
 	}
@@ -476,6 +484,15 @@ private: System::Void btnPlusMinus_Click(System::Object^ sender, System::EventAr
 	}
 	else {
 		txtDisplay->Text = "-" + txtDisplay->Text;
+	}
+}
+private: System::Void btnBackspace_Click(System::Object^ sender, System::EventArgs^ e) {  // Backspace button functionality
+
+	if (txtDisplay->Text->Length > 0) {
+		txtDisplay->Text = txtDisplay->Text->Remove(txtDisplay->Text->Length - 1, 1);
+	}
+	if (txtDisplay->Text == ""){
+		txtDisplay->Text = "0";
 	}
 }
 };
