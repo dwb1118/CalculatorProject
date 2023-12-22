@@ -34,27 +34,50 @@ namespace CalculatorProject {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Button^ button9;
-	private: System::Windows::Forms::Button^ button10;
-	private: System::Windows::Forms::Button^ button11;
-	private: System::Windows::Forms::Button^ button12;
-	private: System::Windows::Forms::Button^ button13;
-	private: System::Windows::Forms::Button^ button14;
-	private: System::Windows::Forms::Button^ button15;
-	private: System::Windows::Forms::Button^ button16;
-	private: System::Windows::Forms::Button^ button17;
-	private: System::Windows::Forms::Button^ button18;
-	private: System::Windows::Forms::Button^ button19;
-	private: System::Windows::Forms::Button^ button20;
+	private: System::Windows::Forms::Button^ btnBackspace;
+	private: System::Windows::Forms::TextBox^ txtDisplay;
+	protected:
+
+
+	private: System::Windows::Forms::Button^ btnC;
+
+	private: System::Windows::Forms::Button^ btnCE;
+	private: System::Windows::Forms::Button^ btnPlusMinus;
+	private: System::Windows::Forms::Button^ btnDigit7;
+	private: System::Windows::Forms::Button^ btnDigit9;
+	private: System::Windows::Forms::Button^ btnPlus;
+
+
+
+
+
+
+	private: System::Windows::Forms::Button^ btnDigit8;
+	private: System::Windows::Forms::Button^ btnDigit4;
+	private: System::Windows::Forms::Button^ btnDigit6;
+	private: System::Windows::Forms::Button^ btnMinus;
+
+
+
+
+	private: System::Windows::Forms::Button^ btnDigit5;
+	private: System::Windows::Forms::Button^ btnDigit1;
+	private: System::Windows::Forms::Button^ btnDigit3;
+	private: System::Windows::Forms::Button^ btnMult;
+
+
+
+
+	private: System::Windows::Forms::Button^ btnDigit2;
+	private: System::Windows::Forms::Button^ btnDigit0;
+	private: System::Windows::Forms::Button^ btnEquals;
+	private: System::Windows::Forms::Button^ btnDivision;
+
+
+
+
+	private: System::Windows::Forms::Button^ btnDecimal;
+
 	protected:
 
 	private:
@@ -70,294 +93,321 @@ namespace CalculatorProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button16 = (gcnew System::Windows::Forms::Button());
-			this->button17 = (gcnew System::Windows::Forms::Button());
-			this->button18 = (gcnew System::Windows::Forms::Button());
-			this->button19 = (gcnew System::Windows::Forms::Button());
-			this->button20 = (gcnew System::Windows::Forms::Button());
+			this->btnBackspace = (gcnew System::Windows::Forms::Button());
+			this->txtDisplay = (gcnew System::Windows::Forms::TextBox());
+			this->btnC = (gcnew System::Windows::Forms::Button());
+			this->btnCE = (gcnew System::Windows::Forms::Button());
+			this->btnPlusMinus = (gcnew System::Windows::Forms::Button());
+			this->btnDigit7 = (gcnew System::Windows::Forms::Button());
+			this->btnDigit9 = (gcnew System::Windows::Forms::Button());
+			this->btnPlus = (gcnew System::Windows::Forms::Button());
+			this->btnDigit8 = (gcnew System::Windows::Forms::Button());
+			this->btnDigit4 = (gcnew System::Windows::Forms::Button());
+			this->btnDigit6 = (gcnew System::Windows::Forms::Button());
+			this->btnMinus = (gcnew System::Windows::Forms::Button());
+			this->btnDigit5 = (gcnew System::Windows::Forms::Button());
+			this->btnDigit1 = (gcnew System::Windows::Forms::Button());
+			this->btnDigit3 = (gcnew System::Windows::Forms::Button());
+			this->btnMult = (gcnew System::Windows::Forms::Button());
+			this->btnDigit2 = (gcnew System::Windows::Forms::Button());
+			this->btnDigit0 = (gcnew System::Windows::Forms::Button());
+			this->btnEquals = (gcnew System::Windows::Forms::Button());
+			this->btnDivision = (gcnew System::Windows::Forms::Button());
+			this->btnDecimal = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// button1
+			// btnBackspace
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnBackspace->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(12, 98);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 71);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"⌫";
-			this->button1->UseVisualStyleBackColor = true;
+			this->btnBackspace->Location = System::Drawing::Point(12, 98);
+			this->btnBackspace->Name = L"btnBackspace";
+			this->btnBackspace->Size = System::Drawing::Size(75, 71);
+			this->btnBackspace->TabIndex = 0;
+			this->btnBackspace->Text = L"⌫";
+			this->btnBackspace->UseVisualStyleBackColor = true;
 			// 
-			// textBox1
+			// txtDisplay
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->txtDisplay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(12, 12);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(320, 69);
-			this->textBox1->TabIndex = 1;
+			this->txtDisplay->Location = System::Drawing::Point(12, 12);
+			this->txtDisplay->Multiline = true;
+			this->txtDisplay->Name = L"txtDisplay";
+			this->txtDisplay->Size = System::Drawing::Size(320, 69);
+			this->txtDisplay->TabIndex = 1;
 			// 
-			// button2
+			// btnC
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(93, 98);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 71);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"C";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			this->btnC->Location = System::Drawing::Point(93, 98);
+			this->btnC->Name = L"btnC";
+			this->btnC->Size = System::Drawing::Size(75, 71);
+			this->btnC->TabIndex = 2;
+			this->btnC->Text = L"C";
+			this->btnC->UseVisualStyleBackColor = true;
+			this->btnC->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
-			// button3
+			// btnCE
 			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnCE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(174, 98);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 71);
-			this->button3->TabIndex = 0;
-			this->button3->Text = L"CE";
-			this->button3->UseVisualStyleBackColor = true;
+			this->btnCE->Location = System::Drawing::Point(174, 98);
+			this->btnCE->Name = L"btnCE";
+			this->btnCE->Size = System::Drawing::Size(75, 71);
+			this->btnCE->TabIndex = 0;
+			this->btnCE->Text = L"CE";
+			this->btnCE->UseVisualStyleBackColor = true;
 			// 
-			// button4
+			// btnPlusMinus
 			// 
-			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnPlusMinus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(257, 98);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 71);
-			this->button4->TabIndex = 0;
-			this->button4->Text = L"±";
-			this->button4->UseVisualStyleBackColor = true;
+			this->btnPlusMinus->Location = System::Drawing::Point(257, 98);
+			this->btnPlusMinus->Name = L"btnPlusMinus";
+			this->btnPlusMinus->Size = System::Drawing::Size(75, 71);
+			this->btnPlusMinus->TabIndex = 0;
+			this->btnPlusMinus->Text = L"±";
+			this->btnPlusMinus->UseVisualStyleBackColor = true;
 			// 
-			// button5
+			// btnDigit7
 			// 
-			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(12, 184);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 71);
-			this->button5->TabIndex = 0;
-			this->button5->Text = L"7";
-			this->button5->UseVisualStyleBackColor = true;
+			this->btnDigit7->Location = System::Drawing::Point(12, 184);
+			this->btnDigit7->Name = L"btnDigit7";
+			this->btnDigit7->Size = System::Drawing::Size(75, 71);
+			this->btnDigit7->TabIndex = 0;
+			this->btnDigit7->Text = L"7";
+			this->btnDigit7->UseVisualStyleBackColor = true;
+			this->btnDigit7->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button6
+			// btnDigit9
 			// 
-			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(174, 184);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(75, 71);
-			this->button6->TabIndex = 0;
-			this->button6->Text = L"9";
-			this->button6->UseVisualStyleBackColor = true;
+			this->btnDigit9->Location = System::Drawing::Point(174, 184);
+			this->btnDigit9->Name = L"btnDigit9";
+			this->btnDigit9->Size = System::Drawing::Size(75, 71);
+			this->btnDigit9->TabIndex = 0;
+			this->btnDigit9->Text = L"9";
+			this->btnDigit9->UseVisualStyleBackColor = true;
+			this->btnDigit9->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button7
+			// btnPlus
 			// 
-			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnPlus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(257, 184);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(75, 71);
-			this->button7->TabIndex = 0;
-			this->button7->Text = L"+";
-			this->button7->UseVisualStyleBackColor = true;
+			this->btnPlus->Location = System::Drawing::Point(257, 184);
+			this->btnPlus->Name = L"btnPlus";
+			this->btnPlus->Size = System::Drawing::Size(75, 71);
+			this->btnPlus->TabIndex = 0;
+			this->btnPlus->Text = L"+";
+			this->btnPlus->UseVisualStyleBackColor = true;
 			// 
-			// button8
+			// btnDigit8
 			// 
-			this->button8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(93, 184);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(75, 71);
-			this->button8->TabIndex = 2;
-			this->button8->Text = L"8";
-			this->button8->UseVisualStyleBackColor = true;
+			this->btnDigit8->Location = System::Drawing::Point(93, 184);
+			this->btnDigit8->Name = L"btnDigit8";
+			this->btnDigit8->Size = System::Drawing::Size(75, 71);
+			this->btnDigit8->TabIndex = 2;
+			this->btnDigit8->Text = L"8";
+			this->btnDigit8->UseVisualStyleBackColor = true;
+			this->btnDigit8->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button9
+			// btnDigit4
 			// 
-			this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(12, 274);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(75, 71);
-			this->button9->TabIndex = 0;
-			this->button9->Text = L"4";
-			this->button9->UseVisualStyleBackColor = true;
+			this->btnDigit4->Location = System::Drawing::Point(12, 274);
+			this->btnDigit4->Name = L"btnDigit4";
+			this->btnDigit4->Size = System::Drawing::Size(75, 71);
+			this->btnDigit4->TabIndex = 0;
+			this->btnDigit4->Text = L"4";
+			this->btnDigit4->UseVisualStyleBackColor = true;
+			this->btnDigit4->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button10
+			// btnDigit6
 			// 
-			this->button10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(174, 274);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(75, 71);
-			this->button10->TabIndex = 0;
-			this->button10->Text = L"6";
-			this->button10->UseVisualStyleBackColor = true;
+			this->btnDigit6->Location = System::Drawing::Point(174, 274);
+			this->btnDigit6->Name = L"btnDigit6";
+			this->btnDigit6->Size = System::Drawing::Size(75, 71);
+			this->btnDigit6->TabIndex = 0;
+			this->btnDigit6->Text = L"6";
+			this->btnDigit6->UseVisualStyleBackColor = true;
+			this->btnDigit6->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button11
+			// btnMinus
 			// 
-			this->button11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnMinus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button11->Location = System::Drawing::Point(257, 274);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(75, 71);
-			this->button11->TabIndex = 0;
-			this->button11->Text = L"-";
-			this->button11->UseVisualStyleBackColor = true;
+			this->btnMinus->Location = System::Drawing::Point(257, 274);
+			this->btnMinus->Name = L"btnMinus";
+			this->btnMinus->Size = System::Drawing::Size(75, 71);
+			this->btnMinus->TabIndex = 0;
+			this->btnMinus->Text = L"-";
+			this->btnMinus->UseVisualStyleBackColor = true;
 			// 
-			// button12
+			// btnDigit5
 			// 
-			this->button12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button12->Location = System::Drawing::Point(93, 274);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(75, 71);
-			this->button12->TabIndex = 2;
-			this->button12->Text = L"5";
-			this->button12->UseVisualStyleBackColor = true;
+			this->btnDigit5->Location = System::Drawing::Point(93, 274);
+			this->btnDigit5->Name = L"btnDigit5";
+			this->btnDigit5->Size = System::Drawing::Size(75, 71);
+			this->btnDigit5->TabIndex = 2;
+			this->btnDigit5->Text = L"5";
+			this->btnDigit5->UseVisualStyleBackColor = true;
+			this->btnDigit5->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button13
+			// btnDigit1
 			// 
-			this->button13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button13->Location = System::Drawing::Point(12, 367);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(75, 71);
-			this->button13->TabIndex = 0;
-			this->button13->Text = L"1";
-			this->button13->UseVisualStyleBackColor = true;
+			this->btnDigit1->Location = System::Drawing::Point(12, 367);
+			this->btnDigit1->Name = L"btnDigit1";
+			this->btnDigit1->Size = System::Drawing::Size(75, 71);
+			this->btnDigit1->TabIndex = 0;
+			this->btnDigit1->Text = L"1";
+			this->btnDigit1->UseVisualStyleBackColor = true;
+			this->btnDigit1->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button14
+			// btnDigit3
 			// 
-			this->button14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button14->Location = System::Drawing::Point(174, 367);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(75, 71);
-			this->button14->TabIndex = 0;
-			this->button14->Text = L"3";
-			this->button14->UseVisualStyleBackColor = true;
+			this->btnDigit3->Location = System::Drawing::Point(174, 367);
+			this->btnDigit3->Name = L"btnDigit3";
+			this->btnDigit3->Size = System::Drawing::Size(75, 71);
+			this->btnDigit3->TabIndex = 0;
+			this->btnDigit3->Text = L"3";
+			this->btnDigit3->UseVisualStyleBackColor = true;
+			this->btnDigit3->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button15
+			// btnMult
 			// 
-			this->button15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnMult->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button15->Location = System::Drawing::Point(257, 367);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(75, 71);
-			this->button15->TabIndex = 0;
-			this->button15->Text = L"x";
-			this->button15->UseVisualStyleBackColor = true;
+			this->btnMult->Location = System::Drawing::Point(257, 367);
+			this->btnMult->Name = L"btnMult";
+			this->btnMult->Size = System::Drawing::Size(75, 71);
+			this->btnMult->TabIndex = 0;
+			this->btnMult->Text = L"x";
+			this->btnMult->UseVisualStyleBackColor = true;
 			// 
-			// button16
+			// btnDigit2
 			// 
-			this->button16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button16->Location = System::Drawing::Point(93, 367);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(75, 71);
-			this->button16->TabIndex = 2;
-			this->button16->Text = L"2";
-			this->button16->UseVisualStyleBackColor = true;
+			this->btnDigit2->Location = System::Drawing::Point(93, 367);
+			this->btnDigit2->Name = L"btnDigit2";
+			this->btnDigit2->Size = System::Drawing::Size(75, 71);
+			this->btnDigit2->TabIndex = 2;
+			this->btnDigit2->Text = L"2";
+			this->btnDigit2->UseVisualStyleBackColor = true;
+			this->btnDigit2->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button17
+			// btnDigit0
 			// 
-			this->button17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDigit0->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button17->Location = System::Drawing::Point(12, 460);
-			this->button17->Name = L"button17";
-			this->button17->Size = System::Drawing::Size(75, 71);
-			this->button17->TabIndex = 0;
-			this->button17->Text = L"0";
-			this->button17->UseVisualStyleBackColor = true;
+			this->btnDigit0->Location = System::Drawing::Point(12, 460);
+			this->btnDigit0->Name = L"btnDigit0";
+			this->btnDigit0->Size = System::Drawing::Size(75, 71);
+			this->btnDigit0->TabIndex = 0;
+			this->btnDigit0->Text = L"0";
+			this->btnDigit0->UseVisualStyleBackColor = true;
+			this->btnDigit0->Click += gcnew System::EventHandler(this, &MyForm::EnterNumber);
 			// 
-			// button18
+			// btnEquals
 			// 
-			this->button18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnEquals->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button18->Location = System::Drawing::Point(174, 460);
-			this->button18->Name = L"button18";
-			this->button18->Size = System::Drawing::Size(75, 71);
-			this->button18->TabIndex = 0;
-			this->button18->Text = L"=";
-			this->button18->UseVisualStyleBackColor = true;
+			this->btnEquals->Location = System::Drawing::Point(174, 460);
+			this->btnEquals->Name = L"btnEquals";
+			this->btnEquals->Size = System::Drawing::Size(75, 71);
+			this->btnEquals->TabIndex = 0;
+			this->btnEquals->Text = L"=";
+			this->btnEquals->UseVisualStyleBackColor = true;
 			// 
-			// button19
+			// btnDivision
 			// 
-			this->button19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDivision->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button19->Location = System::Drawing::Point(257, 460);
-			this->button19->Name = L"button19";
-			this->button19->Size = System::Drawing::Size(75, 71);
-			this->button19->TabIndex = 0;
-			this->button19->Text = L"÷";
-			this->button19->UseVisualStyleBackColor = true;
+			this->btnDivision->Location = System::Drawing::Point(257, 460);
+			this->btnDivision->Name = L"btnDivision";
+			this->btnDivision->Size = System::Drawing::Size(75, 71);
+			this->btnDivision->TabIndex = 0;
+			this->btnDivision->Text = L"÷";
+			this->btnDivision->UseVisualStyleBackColor = true;
 			// 
-			// button20
+			// btnDecimal
 			// 
-			this->button20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnDecimal->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button20->Location = System::Drawing::Point(93, 460);
-			this->button20->Name = L"button20";
-			this->button20->Size = System::Drawing::Size(75, 71);
-			this->button20->TabIndex = 2;
-			this->button20->Text = L".";
-			this->button20->UseVisualStyleBackColor = true;
+			this->btnDecimal->Location = System::Drawing::Point(93, 460);
+			this->btnDecimal->Name = L"btnDecimal";
+			this->btnDecimal->Size = System::Drawing::Size(75, 71);
+			this->btnDecimal->TabIndex = 2;
+			this->btnDecimal->Text = L".";
+			this->btnDecimal->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(344, 555);
-			this->Controls->Add(this->button20);
-			this->Controls->Add(this->button16);
-			this->Controls->Add(this->button12);
-			this->Controls->Add(this->button8);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button19);
-			this->Controls->Add(this->button18);
-			this->Controls->Add(this->button15);
-			this->Controls->Add(this->button14);
-			this->Controls->Add(this->button11);
-			this->Controls->Add(this->button10);
-			this->Controls->Add(this->button17);
-			this->Controls->Add(this->button7);
-			this->Controls->Add(this->button13);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button9);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->btnDecimal);
+			this->Controls->Add(this->btnDigit2);
+			this->Controls->Add(this->btnDigit5);
+			this->Controls->Add(this->btnDigit8);
+			this->Controls->Add(this->btnC);
+			this->Controls->Add(this->txtDisplay);
+			this->Controls->Add(this->btnDivision);
+			this->Controls->Add(this->btnEquals);
+			this->Controls->Add(this->btnMult);
+			this->Controls->Add(this->btnDigit3);
+			this->Controls->Add(this->btnMinus);
+			this->Controls->Add(this->btnDigit6);
+			this->Controls->Add(this->btnDigit0);
+			this->Controls->Add(this->btnPlus);
+			this->Controls->Add(this->btnDigit1);
+			this->Controls->Add(this->btnDigit9);
+			this->Controls->Add(this->btnDigit4);
+			this->Controls->Add(this->btnPlusMinus);
+			this->Controls->Add(this->btnDigit7);
+			this->Controls->Add(this->btnCE);
+			this->Controls->Add(this->btnBackspace);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+
+		double firstDigit, secondDigit, result;
+		String^ operators;
+
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void EnterNumber(System::Object^ sender, System::EventArgs^ e) {
+	Button^ Numbers = safe_cast<Button^>(sender);
+
+	if(txtDisplay->Text == "0"){
+		txtDisplay->Text = Numbers->Text;
+	}
+	else {
+		txtDisplay->Text = txtDisplay->Text + Numbers->Text;
+	}
 	}
 };
 }
