@@ -173,6 +173,7 @@ namespace CalculatorProject {
 			this->btnPlusMinus->TabIndex = 0;
 			this->btnPlusMinus->Text = L"±";
 			this->btnPlusMinus->UseVisualStyleBackColor = true;
+			this->btnPlusMinus->Click += gcnew System::EventHandler(this, &MyForm::btnPlusMinus_Click);
 			// 
 			// btnDigit7
 			// 
@@ -467,6 +468,15 @@ private: System::Void btnClear_Click(System::Object^ sender, System::EventArgs^ 
 
 private: System::Void btnClearEntry_Click(System::Object^ sender, System::EventArgs^ e) {  // Clear Entry button functionality
 	txtDisplay->Text = "0";
+}
+private: System::Void btnPlusMinus_Click(System::Object^ sender, System::EventArgs^ e) {  // PlusMinus button functionality
+
+	if (txtDisplay->Text->Contains("-")) {
+		txtDisplay->Text = txtDisplay->Text->Remove(0, 1);
+	}
+	else {
+		txtDisplay->Text = "-" + txtDisplay->Text;
+	}
 }
 };
 }
